@@ -24,6 +24,25 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
+// Routes
+
+app.get('/', function (req, res) { // TO-DO Verify
+    return projectData
+})
+
+
+app.post('/', pData);
+
+function pData(req,res){
+  newEntry = {
+    temperature: req.body.temperature, // TO-DO update data names
+    date: req.body.date,
+    userResponse: req.body.user-response
+  }
+
+  projectData.push(newEntry)
+  console.log(projectData)
+}
 
 // Setup Server
 const PORT = 3000
