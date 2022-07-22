@@ -1,6 +1,8 @@
 body{
     background: #fffff8;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+
 }
 
 #app{
@@ -8,7 +10,7 @@ body{
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
     height:100vh;
-    background: #f23557;
+    background: #444;
     color: #f0d43a;
     justify-content: center;
     grid-gap: 1em;
@@ -17,6 +19,7 @@ body{
 }
 
 .holder{
+    background: #f23557;
 
 }
 

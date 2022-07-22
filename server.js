@@ -26,23 +26,19 @@ app.use(express.static('website'));
 
 // Routes
 
-app.get('/', function (req, res) { // TO-DO Verify
-    return projectData
+app.get('/data', function (req, res) { // TO-DO Verify
+    res.send(projectData)
+    console.log("data retreieved")
 })
 
+app.post('/add', function (req, res) {
+  projectData["temperature"] = req.body.temp,
+  projectData["date"] = req.body.date,
+  projectData["userResponse"] = req.body.feelings
 
-app.post('/', pData);
-
-function pData(req,res){
-  newEntry = {
-    temperature: req.body.temperature, // TO-DO update data names
-    date: req.body.date,
-    userResponse: req.body.user-response
-  }
-
-  projectData.push(newEntry)
-  console.log(projectData)
-}
+  res.send(projectData)
+  // console.log(projectData)
+})
 
 // Setup Server
 const PORT = 3000
